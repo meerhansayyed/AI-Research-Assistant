@@ -190,19 +190,3 @@ if uploaded_pdf:
         citations = extract_citations(extracted_text)
         st.success(f"Found {len(citations)} citations:")
         st.write(citations)
-
-# Inside your main app code after analysis
-if st.button("Generate PDF Report"):
-    temp_dir = tempfile.mkdtemp()
-    pdf_path = os.path.join(temp_dir, "research_report.pdf")
-    
-    # Example: 'summary_text' from AI output, 'chart_files' list from saved matplotlib charts
-    pdf_file = generate_pdf(summary_text, chart_files, output_path=pdf_path)
-    
-    with open(pdf_file, "rb") as f:
-        st.download_button(
-            label="📄 Download PDF",
-            data=f,
-            file_name="research_report.pdf",
-            mime="application/pdf"
-        )
