@@ -1,0 +1,9 @@
+streamlit
+pillow
+matplotlib
+pandas
+numpy
+PyPDF2
+sentence-transformers
+faiss-cpu
+transformers
